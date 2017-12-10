@@ -1,3 +1,20 @@
+/*
+ * Created by Jose Fuentes on 10/12/17 16:40
+ * Copyright (C) 2017
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"),
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.underlegendz.corelegendz.utils;
 
 import android.view.animation.AccelerateInterpolator;
@@ -363,7 +380,6 @@ public class AnimationUtils {
    * be used in place of {@code AnimationListener} if you only need to override
    * {@code onAnimationEnd()}, avoiding thus having to add pointless boilerplate code to your
    * class.
-   * <br/><br/>
    * Whenever you need to do something after the animation is over but not when it starts nor
    * while the animation is in progress, you can add an {@code AnimationEndListener} to your
    * {@code Animation} like this:
