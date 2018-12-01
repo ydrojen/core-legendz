@@ -20,6 +20,6 @@ Version 1.2.0 *(2018-12-01)*
 
 ## Javadoc
 
-[Javadoc](http://rawgit.com/ydrojen/core-legendz/master/javadoc/index.html)
+[Javadoc](https://ydrojen.github.io/core-legendz/javadoc/)
 
 #
