@@ -17,7 +17,7 @@
 
 package com.underlegendz.corelegendz.mvp;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public abstract class BaseStatePresenter<V extends BaseContract.View, S extends BaseContract.State>
     extends BasePresenter<V> implements BaseContract.StatePresenter<V, S> {

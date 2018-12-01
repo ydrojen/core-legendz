@@ -20,8 +20,8 @@ package com.underlegendz.corelegendz.mvp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import android.view.View;
 
 public interface BaseContract {

@@ -17,11 +17,12 @@
 
 package com.underlegendz.corelegendz.utils.adapter;
 
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 
 public class BasicViewPagerTransformer implements ViewPager.PageTransformer {
-  public static enum TransformType {
+  public enum TransformType {
     FLOW,
     DEPTH,
     ZOOM,
@@ -39,7 +40,7 @@ public class BasicViewPagerTransformer implements ViewPager.PageTransformer {
   private static final float SCALE_FACTOR_SLIDE = 0.85f;
   private static final float MIN_ALPHA_SLIDE = 0.35f;
 
-  public void transformPage(View page, float position) {
+  public void transformPage(@NonNull View page, float position) {
     final float alpha;
     final float scale;
     final float translationX;

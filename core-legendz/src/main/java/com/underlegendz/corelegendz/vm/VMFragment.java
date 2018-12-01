@@ -17,14 +17,15 @@
 
 package com.underlegendz.corelegendz.vm;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,13 +60,13 @@ public abstract class VMFragment extends Fragment implements BaseContract.Dialog
 
   @Nullable
   @Override
-  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-      @Nullable Bundle savedInstanceState) {
+  public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                           @Nullable Bundle savedInstanceState) {
     return inflater.inflate(getLayoutResource(), container, false);
   }
 
   @Override
-  public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     initializeView();
   }
@@ -95,6 +96,7 @@ public abstract class VMFragment extends Fragment implements BaseContract.Dialog
     try {
       // Attempt to get the resource ID of the next animation that
       // will be applied to the given fragment.
+      @SuppressWarnings("JavaReflectionMemberAccess")
       Field nextAnimField = Fragment.class.getDeclaredField("mNextAnim");
       nextAnimField.setAccessible(true);
       int nextAnimResource = nextAnimField.getInt(fragment);
@@ -147,7 +149,7 @@ public abstract class VMFragment extends Fragment implements BaseContract.Dialog
   }
 
   @Override
-  public void setLoadingText(String text) {
+  public void setLoadingText(@NonNull String text) {
     if(getActivity() != null
         && getActivity() instanceof BaseContract.LoadingView){
 
@@ -165,7 +167,7 @@ public abstract class VMFragment extends Fragment implements BaseContract.Dialog
   }
 
   @Override
-  public void showErrorMessage(String text) {
+  public void showErrorMessage(@NonNull String text) {
     if(getActivity() != null
         && getActivity() instanceof BaseContract.LoadingView){
 

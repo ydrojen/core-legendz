@@ -17,8 +17,8 @@
 
 package com.underlegendz.corelegendz.data;
 
-import android.arch.lifecycle.Observer;
-import android.support.annotation.Nullable;
+import androidx.lifecycle.Observer;
+import androidx.annotation.Nullable;
 import com.underlegendz.corelegendz.mvp.BaseContract;
 
 public abstract class ResourceObserver<T> implements Observer<Resource<T>> {
@@ -49,7 +49,9 @@ public abstract class ResourceObserver<T> implements Observer<Resource<T>> {
         case ERROR:
           if(mView != null){
             mView.setLoading(false);
-            mView.showErrorMessage(resource.message);
+            if (resource.message != null) {
+              mView.showErrorMessage(resource.message);
+            }
           }
           break;
         case LOADING:
