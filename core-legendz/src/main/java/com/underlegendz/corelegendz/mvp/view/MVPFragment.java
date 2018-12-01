@@ -18,10 +18,11 @@
 package com.underlegendz.corelegendz.mvp.view;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,13 +39,13 @@ public abstract class MVPFragment extends Fragment implements BaseContract.Loadi
 
   @Nullable
   @Override
-  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-      @Nullable Bundle savedInstanceState) {
+  public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                           @Nullable Bundle savedInstanceState) {
     return inflater.inflate(getLayoutResource(), container, false);
   }
 
   @Override
-  public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     initializeView();
     if (getPresenter() != null) {
@@ -89,7 +90,7 @@ public abstract class MVPFragment extends Fragment implements BaseContract.Loadi
   }
 
   @Override
-  public void onSaveInstanceState(Bundle outState) {
+  public void onSaveInstanceState(@NonNull Bundle outState) {
     super.onSaveInstanceState(outState);
     if(getPresenter() != null && getPresenter() instanceof BaseContract.StatePresenter){
       ((BaseContract.StatePresenter) getPresenter()).getState().writeToBundle(outState);
@@ -113,7 +114,7 @@ public abstract class MVPFragment extends Fragment implements BaseContract.Loadi
   }
 
   @Override
-  public void setLoadingText(String text) {
+  public void setLoadingText(@NonNull String text) {
     if(getActivity() != null
         && getActivity() instanceof BaseContract.LoadingView){
 
@@ -131,7 +132,7 @@ public abstract class MVPFragment extends Fragment implements BaseContract.Loadi
   }
 
   @Override
-  public void showErrorMessage(String text) {
+  public void showErrorMessage(@NonNull String text) {
     if(getActivity() != null
         && getActivity() instanceof BaseContract.LoadingView){
 

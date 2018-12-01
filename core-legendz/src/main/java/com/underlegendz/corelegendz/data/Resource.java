@@ -17,8 +17,8 @@
 
 package com.underlegendz.corelegendz.data;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import static com.underlegendz.corelegendz.data.Status.ERROR;
 import static com.underlegendz.corelegendz.data.Status.LOADING;
@@ -85,6 +85,7 @@ public class Resource<T> {
     return result;
   }
 
+  @NonNull
   @Override
   public String toString() {
     return "Resource{"

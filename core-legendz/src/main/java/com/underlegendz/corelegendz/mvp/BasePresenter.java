@@ -17,7 +17,8 @@
 
 package com.underlegendz.corelegendz.mvp;
 
-import android.support.annotation.CallSuper;
+import androidx.annotation.CallSuper;
+import androidx.annotation.NonNull;
 
 public abstract class BasePresenter<V extends BaseContract.View> implements BaseContract.Presenter<V> {
 
@@ -25,7 +26,7 @@ public abstract class BasePresenter<V extends BaseContract.View> implements Base
   protected V view;
 
   @Override
-  public final void bindView(V view) {
+  public final void bindView(@NonNull V view) {
     if(this.view != view){
       this.view = view;
       onBindView();
@@ -33,7 +34,7 @@ public abstract class BasePresenter<V extends BaseContract.View> implements Base
   }
 
   @Override
-  public void unbindView(V view) {
+  public void unbindView(@NonNull V view) {
     if(this.view != null && this.view.equals(view)){
       this.view = null;
     }

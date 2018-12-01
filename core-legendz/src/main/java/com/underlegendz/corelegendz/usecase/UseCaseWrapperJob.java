@@ -17,7 +17,8 @@
 
 package com.underlegendz.corelegendz.usecase;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.birbit.android.jobqueue.Job;
 import com.birbit.android.jobqueue.Params;
 import com.birbit.android.jobqueue.RetryConstraint;
@@ -45,7 +46,7 @@ class UseCaseWrapperJob<Q extends UseCase.RequestValues, R extends UseCase.Respo
   }
 
   @Override
-  public void onRun() throws Throwable {
+  public void onRun() {
     useCase.executeUseCase(requestValues, callback);
   }
 
@@ -55,7 +56,7 @@ class UseCaseWrapperJob<Q extends UseCase.RequestValues, R extends UseCase.Respo
   }
 
   @Override
-  protected RetryConstraint shouldReRunOnThrowable(Throwable throwable, int runCount, int maxRunCount) {
+  protected RetryConstraint shouldReRunOnThrowable(@NonNull Throwable throwable, int runCount, int maxRunCount) {
     return RetryConstraint.CANCEL;
   }
 }

@@ -17,11 +17,11 @@
 
 package com.underlegendz.corelegendz.utils;
 
-import android.support.annotation.ColorRes;
-import android.support.annotation.DimenRes;
-import android.support.annotation.IntegerRes;
-import android.support.annotation.RawRes;
-import android.support.annotation.StringRes;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DimenRes;
+import androidx.annotation.IntegerRes;
+import androidx.annotation.RawRes;
+import androidx.annotation.StringRes;
 import com.underlegendz.corelegendz.CoreApplication;
 import java.io.InputStream;
 
